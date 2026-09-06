@@ -1,0 +1,66 @@
+{
+  "basarili_get_response": {
+    "durumKodu": 200,
+    "durumMesaji": "OK",
+    "aciklama": "GET isteği başarılı - ürün listesi döndü",
+    "body": {
+      "data": [
+        {
+          "urunId": 101,
+          "urunAdi": "Klavye",
+          "fiyat": 350.00,
+          "stokMiktari": 120
+        },
+        {
+          "urunId": 102,
+          "urunAdi": "Mouse",
+          "fiyat": 150.00,
+          "stokMiktari": 200
+        }
+      ]
+    }
+  },
+
+  "basarili_post_response": {
+    "durumKodu": 201,
+    "durumMesaji": "Created",
+    "aciklama": "POST isteği başarılı - yeni sipariş oluşturuldu",
+    "body": {
+      "siparisId": 502,
+      "musteriId": 1,
+      "durum": "Onaylandı",
+      "toplamTutar": 3200.00,
+      "siparisTarihi": "2026-08-14T14:20:00"
+    }
+  },
+
+  "hatali_response_404": {
+    "durumKodu": 404,
+    "durumMesaji": "Not Found",
+    "aciklama": "İstenen kayıt bulunamadı (örn. olmayan bir ürün ID'si sorgulandığında)",
+    "body": {
+      "hata": true,
+      "mesaj": "ID'si 999 olan ürün bulunamadı."
+    }
+  },
+
+  "hatali_response_400": {
+    "durumKodu": 400,
+    "durumMesaji": "Bad Request",
+    "aciklama": "İstek gövdesinde eksik veya hatalı bilgi gönderildiğinde alınır",
+    "body": {
+      "hata": true,
+      "mesaj": "email alanı zorunludur."
+    }
+  },
+
+  "hatali_response_500": {
+    "durumKodu": 500,
+    "durumMesaji": "Internal Server Error",
+    "aciklama": "Sunucu tarafında beklenmeyen bir hata oluştuğunda alınır",
+    "body": {
+      "hata": true,
+      "mesaj": "Sunucu şu anda isteği işleyemiyor. Lütfen daha sonra tekrar deneyin."
+    }
+  }
+}

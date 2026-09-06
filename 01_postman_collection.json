@@ -1,0 +1,81 @@
+{
+  "info": {
+    "name": "Ornek Firma API - Test Koleksiyonu",
+    "description": "Staj Günü 5: Postman ile GET ve POST isteklerinin test edilmesi",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET - Ürünleri Listele",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": {
+          "raw": "https://api.ornekfirma.com/v1/products",
+          "protocol": "https",
+          "host": ["api", "ornekfirma", "com"],
+          "path": ["v1", "products"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET - Tek Ürün Görüntüle",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": {
+          "raw": "https://api.ornekfirma.com/v1/products/101",
+          "protocol": "https",
+          "host": ["api", "ornekfirma", "com"],
+          "path": ["v1", "products", "101"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST - Yeni Müşteri Ekle",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"ad\": \"Elif\",\n  \"soyad\": \"Kaya\",\n  \"email\": \"elif.kaya@example.com\",\n  \"telefon\": \"05552223344\",\n  \"sehir\": \"Ankara\"\n}"
+        },
+        "url": {
+          "raw": "https://api.ornekfirma.com/v1/customers",
+          "protocol": "https",
+          "host": ["api", "ornekfirma", "com"],
+          "path": ["v1", "customers"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST - Yeni Sipariş Oluştur",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"musteriId\": 1,\n  \"urunler\": [\n    { \"urunId\": 101, \"adet\": 2 },\n    { \"urunId\": 103, \"adet\": 1 }\n  ]\n}"
+        },
+        "url": {
+          "raw": "https://api.ornekfirma.com/v1/orders",
+          "protocol": "https",
+          "host": ["api", "ornekfirma", "com"],
+          "path": ["v1", "orders"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
